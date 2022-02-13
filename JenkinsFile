@@ -2,7 +2,7 @@ node {
     def mvnhome = tool name : "maven-3.8.4"
     
     stage('Checkout code') {
-       git branch: 'development', credentialsId: '350ee086-8f66-41b4-83a2-e5d25777cfbf', url: 'https://github.com/NVKOrg/maven-web-application.git'
+       git branch: 'development', url: 'https://github.com/NVKOrg/maven-web-application.git'
         }
     stage('Build') {
         sh "${mvnhome}/bin/mvn clean package"
